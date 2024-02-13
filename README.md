@@ -7,7 +7,7 @@
 2. Run the elevator script with desired arguments. The start floor should be a single positive integer and the floor
    should be a comma separated list of positive integers.
 
-```npm run elevator start=<yourStartFloorInteger> floor=<yourTravelFloorsAsCommaSeparatedIntegers```
+```npm run elevator start=<yourStartFloorInteger> floor=<yourTravelFloorsAsCommaSeparatedIntegers>```
 
 Example:
 ```npm run elevator start=50 floor=10,80,85,90```
