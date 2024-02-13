@@ -62,6 +62,9 @@ async function startup() {
       // additionally log the total travel time and the floors visited in order in green and blue, for better visibility
       console.log('\x1b[32m%s\x1b[0m', `total travel time: ${elevator.totalTravelTime}`);
       console.log('\x1b[34m%s\x1b[0m', `floors visited in order: ${elevator.floorsVisitedOrder.join(',')}`);
+
+      server.close();
+      process.exit();
     }
   });
 }
