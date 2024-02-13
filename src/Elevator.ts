@@ -39,10 +39,9 @@ export class Elevator {
     // set the floorsVisitedOrder by moving sections of the array and/or reversing sections
     // based on whether we start moving up or down
     if (startDown) {
-      const startIdxNext = this.floorsToVisit.length - 1 === startFloorIdx ? startFloorIdx : startFloorIdx + 1;
-      const startDirFloors = Array.from(this.floorsToVisit.slice(0, startIdxNext).reverse());
+      const startDirFloors = Array.from(this.floorsToVisit.slice(0, startFloorIdx + 1).reverse());
       this.totalTravelTime += startDirFloors.length > 0 ? Math.abs(startDirFloors[0] - startDirFloors[startDirFloors.length - 1]) * this.singleFloorTravelTime : 0;
-      const endDirFloors = Array.from(this.floorsToVisit.slice(startIdxNext));
+      const endDirFloors = Array.from(this.floorsToVisit.slice(startFloorIdx + 1));
       this.totalTravelTime += endDirFloors.length > 0 ? Math.abs(startDirFloors[startDirFloors.length - 1] - endDirFloors[endDirFloors.length - 1]) * this.singleFloorTravelTime : 0;
       this.floorsVisitedOrder = startDirFloors.concat(endDirFloors);
     } else {
